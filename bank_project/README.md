@@ -1,3 +1,9 @@
+## 핀테크 프로젝트 // 프론트엔드 중심의 프로젝트 기획 / 개발
+
+## 2023 01 27 현재 진행중 / ~ 2월 內
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
