@@ -4,7 +4,7 @@
 
 ##    2023 01 27 현재 진행중 / ~ 2월 內
 
-## fireBase hosting Address / https://zerobase-bank.web.app/bank
+## fireBase hosting Address / https://zerobase-bank.web.app
 
 # Getting Started with Create React App
 
