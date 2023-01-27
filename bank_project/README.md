@@ -1,8 +1,10 @@
-## 핀테크 프로젝트 // 프론트엔드 중심의 프로젝트 기획 / 개발
+## ✏️ 핀테크 프로젝트 
 
-## 2023 01 27 현재 진행중 / ~ 2월 內
+##    프론트엔드 중심의 프로젝트 기획 / 개발
 
+##    2023 01 27 현재 진행중 / ~ 2월 內
 
+## fireBase hosting Address / https://zerobase-bank.web.app/bank
 
 # Getting Started with Create React App
 
