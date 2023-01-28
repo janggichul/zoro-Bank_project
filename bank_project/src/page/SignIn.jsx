@@ -95,13 +95,11 @@ export default function SignIn() {
             >가입하기</button>
 
             <div className="text-center text-sm text-grey-dark mt-4">
-                By signing up, you agree to the 
+                회원가입을 하시면 다음을 동의합니다. 
+                <br></br>
                 <a className="no-underline border-b border-grey-dark text-grey-dark" href="#">
-                    Terms of Service
-                </a> and 
-                <a className="no-underline border-b border-grey-dark text-grey-dark" href="#">
-                    Privacy Policy
-                </a>
+                    서비스 정책, 회원가입 약관, 개인 정보 보호 정책
+                </a> 
             </div>
         </div>
 

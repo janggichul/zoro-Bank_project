@@ -1,9 +1,7 @@
 import {  BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Error from './page/Error';
-import Main from './page/main';
 import SignIn from './page/SignIn';
-import Test from './page/Test';
 
 import { initializeApp } from "firebase/app";
 
@@ -11,6 +9,8 @@ import firebaseKey from "./firebaseKey"
 import {getFirestore} from "firebase/firestore"
 import { getAuth } from 'firebase/auth';
 import LoginSuccessPage from './page/LoginSuccessPage';
+import Index from './component/LoginPage/Index';
+import ChartPage from './component/chart/ChartPage';
 const fire = initializeApp(firebaseKey);
 
 export const db = getFirestore(fire)
@@ -22,9 +22,10 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path='*' exact element={<Error />} />
-      <Route path='/' exact element={<Main /> } />
+      <Route path='/' exact element={<Index /> } />
       <Route path='/SignIn' exact element={<SignIn />} />
       <Route path='/bank' exact element={<LoginSuccessPage />}/>
+      <Route path='/chart' exact element={<ChartPage />} />
     </Routes>
     </BrowserRouter>
   );
