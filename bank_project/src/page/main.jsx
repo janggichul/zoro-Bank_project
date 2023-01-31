@@ -43,7 +43,12 @@ export default function Main() {
       navigate('/bank');
       window.location.reload();
       setIdValue(result);
-    });
+    }).catch((error) => {
+            if(error.code == 'auth/wrong-password'){
+        alert("아이디 또는 비밀번호를 확인해주세요!")
+      }
+    })
+    ;
   };
 
   const handelLogin = (e) => {
@@ -72,9 +77,9 @@ export default function Main() {
       window.location.reload();
       setIdValue(result);
     console.log('data', result)
-    })
-    .catch((err) => {
-      console.log(err)
+    },
+    ).catch((error) => {
+        console.log(error)
     })
   }
 

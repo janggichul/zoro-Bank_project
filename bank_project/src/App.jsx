@@ -8,6 +8,7 @@ import { initializeApp } from "firebase/app";
 import firebaseKey from "./firebaseKey"
 import {getFirestore} from "firebase/firestore"
 import { getAuth } from 'firebase/auth';
+import {getDatabase} from "firebase/database"
 import LoginSuccessPage from './page/LoginSuccessPage';
 import Index from './component/LoginPage/Index';
 import ChartPage from './component/chart/ChartPage';
@@ -15,6 +16,7 @@ const fire = initializeApp(firebaseKey);
 
 export const db = getFirestore(fire)
 export const Auth = getAuth(fire)
+// export const db = getDatabase(fire)
 
 function App() {
   
