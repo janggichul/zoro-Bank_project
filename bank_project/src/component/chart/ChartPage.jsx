@@ -4,7 +4,7 @@ export default function ChartPage() {
   return (
     <section class="p-5">
     <div class="mb-5 flex items-center justify-between">
-      <h4 class="font-medium text-slate-500">차트를 확인하시려면 클릭해주세요.</h4>
+      <h4 class="font-medium text-slate-500 my-2">차트를 확인하시려면 클릭해주세요.</h4>
     </div>
     <div class="space-y-2">
       <div class="flex space-x-4 rounded-xl bg-white p-3 shadow-sm items-center">

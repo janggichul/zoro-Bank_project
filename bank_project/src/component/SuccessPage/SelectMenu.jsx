@@ -6,7 +6,7 @@ export default function SelectMenu(props) {
   return (
     <section class="p-5">
           <div class="mb-5 flex items-center justify-between">
-            <h4 class="font-medium text-slate-500">원하시는 메뉴를 선택해 주세요.</h4>
+            <h4 class="font-medium text-slate-500 my-2">원하시는 메뉴를 선택해 주세요.</h4>
           </div>
           <div class="space-y-2">
             <div class="flex space-x-4 rounded-xl bg-white p-3 shadow-sm items-center">
