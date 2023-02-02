@@ -33,13 +33,11 @@ export default function Test() {
 
   const userData = dummy.words.filter((word) => word.id == first);
 
-  console.log("user", userData);
+  // console.log("user", userData);
 
   useEffect(() => {
-    console.log(user);
+    // console.log(user);
   }, []);
-
-  // console.log("dum", dummy);
 
   return (
     <div class="mx-auto max-w-[450px]">
@@ -59,10 +57,10 @@ export default function Test() {
               <span>반갑습니다</span>
             </div>
             <div class="text-2xl font-bold tracking-wider">{`${user.user.displayName}님`}</div>
-            <div class="text-slate-200">$0.24 - 1,112 Sats</div>
+            {/* <div class="text-slate-200"></div> */}
           </div>
         </div>
-        <AccountLink />
+        <AccountLink user={user} />
         {button !== true &&<SelectMenu user={user} />}
         {button === true && <ChartPage />}
         <QuickMenu button={setButton}/> 

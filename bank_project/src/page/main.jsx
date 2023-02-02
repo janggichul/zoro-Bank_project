@@ -85,7 +85,6 @@ export default function Main() {
 
   return (
     <>
-      {/* {isLoggined ? "로그인됨" : "로그인안됨"} */}
       <form className="mt-8 space-y-6" onSubmit={handelLogin}>
         <input type="hidden" name="remember" defaultValue="true" />
         <div className="-space-y-px rounded-md shadow-sm">

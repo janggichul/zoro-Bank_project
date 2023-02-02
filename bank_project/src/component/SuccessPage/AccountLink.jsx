@@ -1,27 +1,36 @@
 import React from 'react'
+import { useState } from 'react'
+import RegisterModal from './RegisterModal'
+import AccountRegister from './RegisterModal'
 
-export default function AccountLink() {
+export default function AccountLink(props) {
+  const {user} = props
+  const [registerModal, setRegisterModal] = useState(false)
+  const [show, setShow] = useState(false)
+
+  const handleRegisterButton = () => {
+    setRegisterModal(!registerModal)
+  }
+
   return (
     <div class="-mt-40 p-5">
           <div class="rounded-xl bg-white p-4 font-medium text-slate-500 shadow-sm">
             <div class="mb-3 text-sm">제로은행 계좌번호</div>
             <div class="mb-3">
-              <div class="h-4 w-full overflow-hidden rounded-full bg-slate-100">
-                <div class="h-full w-1/2 rounded-full bg-gradient-to-r from-blue-400 to-indigo-500"></div>
-              </div>
+              {/* <div class="h-4 w-full overflow-hidden rounded-full bg-slate-100"> */}
+                {/* <div class="h-full w-1/2 rounded-full bg-gradient-to-r from-blue-400 to-indigo-500"></div> */}
+              {/* </div> */}
             </div>
             <div class="mb-4 flex justify-between">
-              <div class="tracking-wides rounded-md bg-slate-100 py-1 px-2 text-xs font-semibold">
-                test
-              </div>
-              <div class="tracking-wides rounded-md bg-slate-100 py-1 px-2 text-xs font-semibold">
-                test
-              </div>
-              <div class="tracking-wides rounded-md bg-slate-100 py-1 px-2 text-xs font-semibold">
-                test
-              </div>
+              {show === false && <div class="tracking-wides rounded-md bg-slate-100 py-1 px-2 text-xs font-semibold">
+                현재 등록된 계좌번호가 없습니다.
+              </div>}
+              {show !== false && <div class="tracking-wides rounded-md bg-slate-100 py-1 px-2 text-xs font-semibold">
+                현재 등록된 계좌는 000
+              </div>}
             </div>
-            <button class="flex w-full items-center justify-center rounded-lg bg-gray-800 py-4 px-5 font-medium tracking-wide text-white text-opacity-90 shadow-slate-100 hover:shadow-lg">
+            <button class="flex w-full items-center justify-center rounded-lg bg-gray-800 py-4 px-5 font-medium tracking-wide text-white text-opacity-90 shadow-slate-100 hover:shadow-lg"
+            onClick={handleRegisterButton} >
               <span class="mr-2">계좌등록 하기</span>
               <svg
                 class="h-6 w-6"
@@ -38,6 +47,7 @@ export default function AccountLink() {
                 ></path>
               </svg>
             </button>
+            {registerModal && <RegisterModal user={user} setShow={setShow} setRegisterModal={setRegisterModal}/>}
           </div>
         </div>
   )
