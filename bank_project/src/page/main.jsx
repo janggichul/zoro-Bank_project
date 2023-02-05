@@ -7,6 +7,7 @@ import { LoginState } from '../component/LoginState';
 import { Auth } from '../App';
 import { useCookies } from 'react-cookie';
 import SignMenuButton from '../component/LoginPage/SignMenuButton';
+import Swal from 'sweetalert2';
 
 export default function Main() {
   const [email, setEmail] = useState('');
@@ -45,7 +46,12 @@ export default function Main() {
       setIdValue(result);
     }).catch((error) => {
             if(error.code == 'auth/wrong-password'){
-        alert("아이디 또는 비밀번호를 확인해주세요!")
+              Swal.fire({
+                text: '아이디 또는 비밀번호를 확인해주세요!',
+                width: 350,
+                padding: 10,
+                confirmButtonText: '확인',
+              })
       }
     })
     ;

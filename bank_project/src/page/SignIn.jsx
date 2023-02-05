@@ -8,13 +8,15 @@ import {
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { db } from '../App';
-import { doc, getDoc, setDoc, } from 'firebase/firestore';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
+import Swal from 'sweetalert2';
 
 export default function SignIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [account, setAccount] = useState('')
   const {
     register,
     handleSubmit,
@@ -37,55 +39,73 @@ export default function SignIn() {
   const handelConfirmPassword = (e) => {
     setConfirmPassword(e.currentTarget.value);
   };
+
+  const handleAccount = (e) => {
+    setAccount(e.currentTarget.value);
+  };
   // 이름, 이메일 값 배열의 저장
-  const emailRef = doc(db, 'duplication', 'state')
+  const emailRef = doc(db, 'duplication', 'state');
 
   const writeUserData = async () => {
-    const docSnap = await getDoc(emailRef)
-    const arr = docSnap.data().email
-    const arr2 = docSnap.data().name
-    console.log('arr', arr)
+    const docSnap = await getDoc(emailRef);
+    const arr = docSnap.data().email;
+    const arr2 = docSnap.data().name;
+    console.log('arr', arr);
     const docData = {
-        email : [...arr, email],
-        name : [...arr2, name]
-    }
-    await setDoc((emailRef), docData )
+      email: [...arr, email],
+      name: [...arr2, name],
+    };
+    await setDoc(emailRef, docData);
   };
   // 이메일 중복 여부 확인
   const handleDuplicationButton = async () => {
-      const docSnap = await getDoc(emailRef);
-      if (docSnap.exists()) {
-          const array = docSnap.data().email
-          if (array.find(e => e === email)) {
-              alert('다른 사용자가 이용중입니다. ');
-            } else {
-                alert('사용가능한 이메일입니다.');
-            }
-        } else {
-            console.log('No such document!');
-        }
-        console.log(docSnap.data())
-    };
-  const signUp = async ({ e }) => {
-      writeUserData();
-      if (password !== confirmPassword) {
-          return alert('비밀번호가 같지 않습니다.');
-        }
-        const auth = getAuth();
-        const result = createUserWithEmailAndPassword(auth, email, password)
-        .then((result) => {
-            updateProfile(auth.currentUser, { displayName: name });
+    const docSnap = await getDoc(emailRef);
+    if (docSnap.exists()) {
+      const array = docSnap.data().email;
+      if (array.find((e) => e === email)) {
+        Swal.fire({
+          text: '다른 사용자가 이용중입니다.',
+          width: 350,
+          padding: 10,
+          confirmButtonText: '확인',
         })
-        .catch((error) => {
-            if (error.code == 'auth/email-already-in-use') {
-                alert('이메일이 중복되었습니다.');
-                navigate('/signIn');
-            }
-        });
+      } else {
+        Swal.fire({
+          text: '사용 가능한 이메일입니다.',
+          width: 350,
+          padding: 10,
+          confirmButtonText: '확인',
+        })
+      }
+    } else {
+      console.log('No such document!');
+    }
+  };
+  const signUp = async ({ e }) => {
+    if (password !== confirmPassword) {
+      Swal.fire({
+        text: '비밀번호가 같지 않습니다.',
+        width: 350,
+        padding: 10,
+        confirmButtonText: '확인',
+      })
+    } else {
+    writeUserData();
+    const auth = getAuth();
+    const result = createUserWithEmailAndPassword(auth, email, password)
+      .then((result) => {
+        updateProfile(auth.currentUser, { displayName: name, phoneNumber: account, photoURL : account });
+      })
+      .catch((error) => {
+        if (error.code == 'auth/email-already-in-use') {
+          alert('이메일이 중복되었습니다.');
+          navigate('/signIn');
+        }
+      });
     console.log(result);
     navigate('/');
+  }
   };
-
 
   return (
     <div className="bg-grey-lighter min-h-screen flex flex-col">
@@ -150,6 +170,17 @@ export default function SignIn() {
               value={confirmPassword}
               onChange={handelConfirmPassword}
               placeholder="비밀번호 확인"
+            />
+
+            <input
+              type="text"
+              className="block border border-grey-light w-full p-3 rounded mb-4"
+              name="account"
+              autoComplete="current-account"
+              required
+              value={account}
+              onChange={handleAccount}
+              placeholder="계좌번호"
             />
 
             <button

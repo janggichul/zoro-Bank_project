@@ -1,4 +1,4 @@
-import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
+import { signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
@@ -8,7 +8,6 @@ import { LoginState } from "../component/LoginState";
 import AccountLink from "../component/SuccessPage/AccountLink";
 import QuickMenu from "../component/SuccessPage/QuickMenu";
 import SelectMenu from "../component/SuccessPage/SelectMenu";
-import dummy from "../data/dummy.json";
 
 export default function Test() {
   const [user, setUser] = useRecoilState(LoginState);
@@ -21,22 +20,16 @@ export default function Test() {
       .then((result) => {
         navigate("/");
         window.location.reload();
+        localStorage.removeItem('account')
         // console.log("로그아웃", result);
       })
       .catch((error) => {
-        // console.log(error);
+        console.log(error);
       });
   };
-  const str = user.user.uid;
-  const first = str.charAt(-1);
-  // console.log(first);
-
-  const userData = dummy.words.filter((word) => word.id == first);
-
-  // console.log("user", userData);
 
   useEffect(() => {
-    // console.log(user);
+    console.log(user);
   }, []);
 
   return (
@@ -57,7 +50,6 @@ export default function Test() {
               <span>반갑습니다</span>
             </div>
             <div class="text-2xl font-bold tracking-wider">{`${user.user.displayName}님`}</div>
-            {/* <div class="text-slate-200"></div> */}
           </div>
         </div>
         <AccountLink user={user} />

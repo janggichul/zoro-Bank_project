@@ -28,7 +28,7 @@ export default function Index() {
             <h2 className="mt-1 text-center text-3xl font-bold tracking-tight text-gray-900">
               <Header title="제로은행"></Header>
             </h2>
-            <p className="font-medium text-indigo-600 hover:text-indigo-500 mt-6 text-center text-sm text-gray-600">
+            <p className="font-medium hover:text-indigo-500 mt-6 text-center text-sm text-gray-600">
               이메일과 비밀번호를 입력해주세요.
             </p>
           </div>
