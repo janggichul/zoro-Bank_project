@@ -21,3 +21,8 @@ export const balanceCheckState = atom({
   key : 'balanceCheckState',
   default : false
 })
+
+export const TrasferState = atom({
+  key : 'TrasferState',
+  default : false
+})

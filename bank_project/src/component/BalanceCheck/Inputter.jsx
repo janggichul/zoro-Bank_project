@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import Swal from 'sweetalert2';
-import { balanceCheckState } from '../LoginState';
+import Test from '../../page/LoginSuccessPage';
+import { balanceCheckState } from '../AtomState';
 import BalanceCheck from './BalanceCheck';
 
 const PASSWORD_MAX_LENGTH = 6;
@@ -13,6 +15,8 @@ export default function Inputter() {
   const [nums, setNums] = useState(nums_init);
   const [password, setPassword] = useState('');
   const [cancel, setCancel] = useRecoilState(balanceCheckState);
+  const [state, setState] = useState(false)
+  const navigate = useNavigate()
 
   const handlePasswordChange = useCallback(
     (num) => {
@@ -36,7 +40,6 @@ export default function Inputter() {
   const erasePasswordAll = useCallback((e) => {
     setPassword('');
   }, []);
-  console.log(nums);
 
   const shuffleNums = useCallback(
     (num) => (e) => {
@@ -56,8 +59,9 @@ export default function Inputter() {
         confirmButtonText: '확인',
       });
     } else {
-      setCancel(false)
-      
+      // setState(!state)
+      setCancel(!cancel)
+      navigate('/balanceCheck')
     }
   };
   return (
@@ -65,13 +69,13 @@ export default function Inputter() {
       <input
         type="password"
         value={password}
-        class="flex bg-inherit text-center text-4xl font-bold m-auto text-indigo-500 my-4"
+        class="flex bg-inherit text-center text-4xl m-auto text-indigo-500 my-4"
       />
       <div class="text-center">
         {nums.map((n, i) => {
           const Basic_button = (
             <button
-              class="w-32 h-16 overflow-hidden outline-none focus:outline-none bg-indigo-600 hover:bg-indigo-700 text-white text-xl font-bold"
+              class="w-28 h-16 overflow-hidden outline-none focus:outline-none bg-indigo-600 hover:bg-indigo-700 text-white text-xl font-bold"
               type="submit"
               value={n}
               onClick={shuffleNums(n)}
@@ -83,7 +87,7 @@ export default function Inputter() {
           return i == nums.length - 1 ? (
             <>
               <button
-                className="bg-indigo-600 w-32 h-16 overflow-hidden outline-none focus:outline-none hover:bg-indigo-700 text-white text-xl font-bold"
+                className="bg-indigo-600 w-28 h-16 overflow-hidden outline-none focus:outline-none hover:bg-indigo-700 text-white text-xl font-bold"
                 onClick={erasePasswordAll}
               >
                 전체삭제
@@ -95,7 +99,7 @@ export default function Inputter() {
           );
         })}
         <button
-          class="bg-indigo-600 w-32 h-16 overflow-hidden outline-none focus:outline-none hover:bg-indigo-400 text-white text-xl font-bold"
+          class="bg-indigo-600 w-28 h-16 overflow-hidden outline-none focus:outline-none hover:bg-indigo-400 text-white text-xl font-bold"
           onClick={erasePasswordOne}
         >
           삭제
@@ -110,6 +114,7 @@ export default function Inputter() {
           확인
         </button>
       </div>
+        {state && <BalanceCheck />}
     </>
   );
 }

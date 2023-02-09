@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -16,13 +16,18 @@ export default function SignIn() {
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [account, setAccount] = useState('')
+  // const [account, setAccount] = useState('');
+  const [account, setAccount] = useState({
+    accountValue: '',
+  });
   const {
     register,
     handleSubmit,
     formState: { isSubmitting, errors },
   } = useForm();
   const navigate = useNavigate();
+
+  const {accountValue} = account
 
   const handleName = (e) => {
     setName(e.currentTarget.value);
@@ -41,7 +46,12 @@ export default function SignIn() {
   };
 
   const handleAccount = (e) => {
-    setAccount(e.currentTarget.value);
+    const {value ,name} = e.currentTarget
+
+    setAccount({
+      ...account,
+      [name] : value
+    })
   };
   // 이름, 이메일 값 배열의 저장
   const emailRef = doc(db, 'duplication', 'state');
@@ -68,14 +78,14 @@ export default function SignIn() {
           width: 350,
           padding: 10,
           confirmButtonText: '확인',
-        })
+        });
       } else {
         Swal.fire({
           text: '사용 가능한 이메일입니다.',
           width: 350,
           padding: 10,
           confirmButtonText: '확인',
-        })
+        });
       }
     } else {
       console.log('No such document!');
@@ -88,24 +98,36 @@ export default function SignIn() {
         width: 350,
         padding: 10,
         confirmButtonText: '확인',
-      })
-    } else {
-    writeUserData();
-    const auth = getAuth();
-    const result = createUserWithEmailAndPassword(auth, email, password)
-      .then((result) => {
-        updateProfile(auth.currentUser, { displayName: name, phoneNumber: account, photoURL : account });
-      })
-      .catch((error) => {
-        if (error.code == 'auth/email-already-in-use') {
-          alert('이메일이 중복되었습니다.');
-          navigate('/signIn');
-        }
       });
-    console.log(result);
-    navigate('/');
-  }
+    } else {
+      writeUserData();
+      const auth = getAuth();
+      const result = createUserWithEmailAndPassword(auth, email, password)
+        .then((result) => {
+          updateProfile(auth.currentUser, {
+            displayName: name,
+            // phoneNumber: account,
+            photoURL: accountValue,
+          });
+        })
+        .catch((error) => {
+          if (error.code == 'auth/email-already-in-use') {
+            alert('이메일이 중복되었습니다.');
+            navigate('/signIn');
+          }
+        });
+      console.log(result);
+      navigate('/');
+    }
   };
+
+  useEffect(() => {
+    if(accountValue.length === 12) {
+      setAccount({
+        accountValue : accountValue.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3'),
+      })
+    }
+  }, [accountValue])
 
   return (
     <div className="bg-grey-lighter min-h-screen flex flex-col">
@@ -175,12 +197,12 @@ export default function SignIn() {
             <input
               type="text"
               className="block border border-grey-light w-full p-3 rounded mb-4"
-              name="account"
+              name="accountValue"
               autoComplete="current-account"
               required
-              value={account}
+              value={accountValue}
               onChange={handleAccount}
-              placeholder="계좌번호"
+              placeholder="12자리 계좌번호를 입력하세요."
             />
 
             <button

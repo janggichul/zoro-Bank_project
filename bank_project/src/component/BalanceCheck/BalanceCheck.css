@@ -1,0 +1,44 @@
+.gr {
+  color: #818CF8;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+ul.pagination li {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+
+ul.pagination li a {
+  text-decoration: none;
+  color: #818CF8;
+  font-size: 1rem;
+}
+ul.pagination li.active a {
+  font-weight: 800;
+}
+ul.pagination li.active {
+  font-weight: 800;
+}
+ul.pagination li a:hover,
+ul.pagination li a.active {
+  color: #818CF8;
+}
+.page-selection {
+  width: 48px;
+  height: 30px;
+  color: #818CF8;
+}

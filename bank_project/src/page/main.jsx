@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword, onAuthStateChanged, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
-import { LoginState } from '../component/LoginState';
+import { LoginState } from '../component/AtomState';
 import { Auth } from '../App';
 import { useCookies } from 'react-cookie';
 import SignMenuButton from '../component/LoginPage/SignMenuButton';

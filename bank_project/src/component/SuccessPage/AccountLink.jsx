@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { useRecoilState } from 'recoil'
-import { ShowState } from '../LoginState'
+import { ShowState } from '../AtomState'
 import RegisterModal from './RegisterModal'
 
 export default function AccountLink(props) {

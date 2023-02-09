@@ -11,6 +11,8 @@ import { getAuth } from 'firebase/auth';
 import LoginSuccessPage from './page/LoginSuccessPage';
 import Index from './component/LoginPage/Index';
 import ChartPage from './component/chart/ChartPage';
+import BalanceCheck from './component/BalanceCheck/BalanceCheck';
+import Transfer from './component/AccountTransfer/Transfer';
 const fire = initializeApp(firebaseKey);
 
 export const db = getFirestore(fire)
@@ -27,6 +29,8 @@ function App() {
       <Route path='/SignIn' exact element={<SignIn />} />
       <Route path='/bank' exact element={<LoginSuccessPage />}/>
       <Route path='/chart' exact element={<ChartPage />} />
+      <Route path='/balanceCheck' exact element={<BalanceCheck />} />
+      <Route path='/transfer' exact element={<Transfer />} />
     </Routes>
     </BrowserRouter>
   );

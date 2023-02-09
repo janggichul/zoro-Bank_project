@@ -41,7 +41,7 @@ export default function RegisterModal(props) {
     <>
       <div class="bg-slate-800 bg-opacity-50 flex justify-center items-center absolute top-0 right-0 bottom-0 left-0 z-10">
         <div class="bg-white px-12 py-12 rounded-md text-center">
-          <h1 class="text-xl mb-4 font-bold text-slate-500">{`${user.user.displayName}님의 계좌정보를 불러왔습니다.`}</h1>
+          <h1 class="text-lg mb-4 font-bold text-slate-500">{`${user.user.displayName}님의 계좌정보를 불러왔습니다.`}</h1>
           <h3 class="mb-4 font-bold text-slate-700 text-left">제로은행</h3>
           <h3 class="mb-7 font-bold text-slate-700 text-left">
             {`계좌번호 : ${user.user.photoURL}`}

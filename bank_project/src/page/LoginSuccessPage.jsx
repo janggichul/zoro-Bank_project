@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { Auth } from "../App";
 import ChartPage from "../component/chart/ChartPage";
-import { LoginState } from "../component/LoginState";
+import { LoginState } from "../component/AtomState";
 import AccountLink from "../component/SuccessPage/AccountLink";
 import QuickMenu from "../component/SuccessPage/QuickMenu";
 import SelectMenu from "../component/SuccessPage/SelectMenu";
@@ -60,28 +60,3 @@ export default function Test() {
     </div>
   );
 }
-
-{
-  /* <div>{`안녕하세요? ${user.user.displayName}님`}</div>
-  <form onSubmit={Profile}>
-  <button type="submit" >로그아웃</button>
-  <div>
-    <tbody>
-      {userData.map(word => (
-        <tr>
-      <td>{word.eng}</td>
-      <td>{word.kor}</td>
-    </tr>
-    ))}
-    </tbody>
-  </div>
-  </form> */
-}
-
-// X버튼
-{/* <button
-type="button"
-class="rounded bg-slate-50 px-2 text-xl text-slate-500 hover:bg-slate-100"
->
-&times;
-</button> */}
