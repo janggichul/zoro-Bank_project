@@ -11,15 +11,18 @@ import { db } from '../App';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import Swal from 'sweetalert2';
 
+
+ // 회원가입 페이지
 export default function SignIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  // const [account, setAccount] = useState('');
   const [account, setAccount] = useState({
     accountValue: '',
   });
+
+  // reactForm 라이브러리
   const {
     register,
     handleSubmit,
@@ -67,6 +70,7 @@ export default function SignIn() {
     };
     await setDoc(emailRef, docData);
   };
+
   // 이메일 중복 여부 확인
   const handleDuplicationButton = async () => {
     const docSnap = await getDoc(emailRef);
@@ -91,6 +95,8 @@ export default function SignIn() {
       console.log('No such document!');
     }
   };
+
+  // 회원가입 버튼
   const signUp = async ({ e }) => {
     if (password !== confirmPassword) {
       Swal.fire({
@@ -121,6 +127,7 @@ export default function SignIn() {
     }
   };
 
+  // 계좌번호 자동 하이픈 정규식 표현
   useEffect(() => {
     if(accountValue.length === 12) {
       setAccount({
