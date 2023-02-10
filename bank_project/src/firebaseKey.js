@@ -3,6 +3,7 @@
 // https://firebase.google.com/docs/web/setup#available-libraries
 // Your web app's Firebase configuration
 
+// 파이어베이스 환경변수
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_apikey,
