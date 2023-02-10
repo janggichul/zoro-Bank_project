@@ -23,8 +23,8 @@ function App() {
   
   return (
     <BrowserRouter>
-    <Routes>
-      <Route path='*' exact element={<Error />} />
+    <Routes> 
+      <Route path='*' exact element={<Error />} /> 
       <Route path='/' exact element={<Index /> } />
       <Route path='/SignIn' exact element={<SignIn />} />
       <Route path='/bank' exact element={<LoginSuccessPage />}/>
