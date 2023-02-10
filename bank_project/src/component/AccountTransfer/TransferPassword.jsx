@@ -4,6 +4,8 @@ import Inputter from '../BalanceCheck/Inputter';
 import {TrasferState } from '../LoginState';
 import TransferInputter from './TransferInputter';
 
+
+  //계좌이체 2차 비밀번호 header
 export default function TransferPassword() {
   const [cancel, setCancel] = useRecoilState(TrasferState);
 
