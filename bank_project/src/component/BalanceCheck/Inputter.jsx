@@ -9,6 +9,8 @@ import BalanceCheck from './BalanceCheck';
 
 const PASSWORD_MAX_LENGTH = 6;
 
+  // 잔액조회 2차 비밀번호 입력기
+
 export default function Inputter() {
   let nums_init = Array.from({ length: 10 }, (v, k) => k);
 
