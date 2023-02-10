@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom"
 
+
+// 에러시 출려하는 페이지
 const Error = () => {
     return (
         <>
