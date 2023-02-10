@@ -3,6 +3,8 @@ import { useRecoilState } from 'recoil';
 import { balanceCheckState } from '../LoginState';
 import Inputter from './Inputter';
 
+
+ // 잔액조회 2차 비밀번호 header
 export default function Password() {
    
   const [cancel, setCancel] = useRecoilState(balanceCheckState);
