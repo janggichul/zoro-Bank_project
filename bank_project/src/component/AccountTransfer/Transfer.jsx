@@ -5,6 +5,8 @@ import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import TransferLoading from '../Loading/TransferLoading';
 
+
+  // 계좌이체 페이지
 export default function Transfer() {
   const [amount, setAmount] = useState("");
   const [isLoading, setIsLoading] = useState(true);
