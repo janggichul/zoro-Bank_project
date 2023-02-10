@@ -1,5 +1,7 @@
 import React from 'react'
 
+
+  // 은행 이용 내역 전시
 export default function ActivePage({posts}) {
   
   return (

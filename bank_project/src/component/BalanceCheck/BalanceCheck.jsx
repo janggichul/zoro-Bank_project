@@ -7,12 +7,15 @@ import ActivePage from './ActivePage';
 import './BalanceCheck.css';
 import { useNavigate } from 'react-router-dom';
 
+  // 잔액 조회 페이지
+
 export default function BalanceCheck() {
   const [page, setPage] = useState(1);
   const [activePage, setActivePage] = useState([]);
   const [postsPerPage, setPostsPerPage] = useState(5);
   const [data, setData] = useState(dummy.inquiry);
 
+  // 더미 데이터 활용
   const result = dummy.inquiry.find((el) => el !== undefined);
   const navigate = useNavigate();
 
@@ -25,6 +28,7 @@ export default function BalanceCheck() {
     setPage(page);
   };
 
+  // 페이지 네이션 라이브러리 사용
   const indexOfLast = page * postsPerPage;
   const indexOfFirst = indexOfLast - postsPerPage;
   const currentPosts = (activePage) => {
