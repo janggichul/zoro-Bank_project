@@ -2,11 +2,11 @@ import React from 'react'
 import { LockClosedIcon,} from "@heroicons/react/20/solid";
 import { useNavigate } from 'react-router-dom';
 
-
+     // 로그인 페이지 하단 영역
 export default function SignMenuButton() {
     const navigate = useNavigate();
 
-
+     // 회원가입 페이지 이동
     const openUserAuthPage = () => {
         navigate("/SignIn");
       };
