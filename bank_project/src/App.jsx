@@ -17,7 +17,6 @@ const fire = initializeApp(firebaseKey);
 
 export const db = getFirestore(fire)
 export const Auth = getAuth(fire)
-// export const db = getDatabase(fire)
 
 function App() {
   
