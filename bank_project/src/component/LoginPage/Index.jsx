@@ -3,16 +3,19 @@ import Main from '../../page/main'
 import Header from '../Header'
 import LoadingPage from '../Loading/LoadingPage'
 
-// 메인페이지
+  // 메인페이지 Header 및 로딩페이지
 
 export default function Index() {
   const [isLoading, setIsLoading] = useState(true)
 
+  // 2초간 로딩페이지 전시
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false)
     },2000)
   },[])
+
+  // 로딩페이지
 
   if(isLoading) return(
     <LoadingPage />
