@@ -5,6 +5,8 @@ import { useRecoilState } from 'recoil'
 import { ShowState } from '../LoginState'
 import RegisterModal from './RegisterModal'
 
+
+ // 계좌 연동 페이지
 export default function AccountLink(props) {
   const {user} = props
   const [registerModal, setRegisterModal] = useState(false)
@@ -14,6 +16,7 @@ export default function AccountLink(props) {
     setRegisterModal(!registerModal)
   }
 
+  // 로컬스토리지 계좌 정보 불러옴.
   useEffect(() => {
     const accountState = localStorage.getItem('account')
     if(accountState !== null) {
