@@ -9,11 +9,15 @@ import AccountLink from "../component/SuccessPage/AccountLink";
 import QuickMenu from "../component/SuccessPage/QuickMenu";
 import SelectMenu from "../component/SuccessPage/SelectMenu";
 
+
+    // 마이페이지 상단 (로그인 후 페이지)
 export default function Test() {
   const [user, setUser] = useRecoilState(LoginState);
   const [button, setButton] = useState(false)
 
   const navigate = useNavigate();
+
+  // 로그아웃 버튼 
 
   const Profile = () => {
     signOut(Auth)
@@ -21,7 +25,6 @@ export default function Test() {
         navigate("/");
         window.location.reload();
         localStorage.removeItem('account')
-        // console.log("로그아웃", result);
       })
       .catch((error) => {
         console.log(error);
