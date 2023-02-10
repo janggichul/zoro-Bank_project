@@ -19,6 +19,7 @@ export default function Main() {
 
   const navigate = useNavigate();
 
+  // 로그인 시 로그인 여부 확인
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(Auth, (user) => {
       if (user) {
@@ -38,6 +39,7 @@ export default function Main() {
     }
   }, []);
 
+  // 파이어베이스 기존 사용자 로그인 코드
   const signIn = () => {
     signInWithEmailAndPassword(Auth, email, password).then((result) => {
       console.log("result", result);
@@ -56,7 +58,7 @@ export default function Main() {
     })
     ;
   };
-
+  // 페스워드 조건문 
   const handelLogin = (e) => {
     e.preventDefault();
     if(password.length < 6){
@@ -66,6 +68,7 @@ export default function Main() {
     }
   };
 
+  // 아이디 저장 체크 (쿠키저장)
   const handleCheck = (e) => {
     setIsRemember(e.target.checked);
     if (e.target.checked) {
@@ -75,6 +78,7 @@ export default function Main() {
     }
   };
 
+  // 파이어베이스 구글 로그인 코드
   const handleGoogleLogin = () => {
     const provider = new GoogleAuthProvider()
     signInWithPopup(Auth, provider)
