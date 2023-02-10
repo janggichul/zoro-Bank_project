@@ -8,6 +8,8 @@ import Transfer from './Transfer';
 
 const PASSWORD_MAX_LENGTH = 6;
 
+// 계좌이체 2차 비밀번호 입력기
+
 export default function TransferInputter() {
   let nums_init = Array.from({ length: 10 }, (v, k) => k);
 
