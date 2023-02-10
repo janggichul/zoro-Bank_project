@@ -8,12 +8,16 @@ import Password from '../BalanceCheck/Password';
 import Transfer from '../AccountTransfer/Transfer';
 import TransferPassword from '../AccountTransfer/TransferPassword';
 
+  // Home Menu 잔액 조회 / 계좌이체
+
 export default function SelectMenu(props) {
   const { user } = props;
   const [balanceCheck, setBalanceCheck] = useRecoilState(balanceCheckState);
   const [accountTransfer, setAccountTransfer] = useRecoilState(TrasferState)
   const [show, setShow] = useRecoilState(ShowState);
 
+
+  // 계좌 미 연동시 경고창 발생
   const handleBalanceCheckButton = () => {
     if (show === false) {
       Swal.fire({
@@ -26,10 +30,12 @@ export default function SelectMenu(props) {
       setBalanceCheck(!balanceCheck);
     }
   };
+
   const handleAcountTransferButton = () => {
     setAccountTransfer(!accountTransfer)
   }
-
+  // 잔액조회 / 계좌이체 클릭시 2차 비밀번호 입력기 전시
+  
   return (
     <section class="p-5">
       <div class="mb-5 flex items-center justify-between">
