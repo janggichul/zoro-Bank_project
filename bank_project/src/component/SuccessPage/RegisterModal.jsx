@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Register from '../Loading/Register';
 
-
+ // 계좌연동 모달 페이지
 export default function RegisterModal(props) {
   const { user, setShow, setRegisterModal } = props;
 
@@ -12,6 +12,8 @@ export default function RegisterModal(props) {
       setIsLoading(false);
     }, 1000);
   }, []);
+
+  // 모달페이지 취소시 연동페이지 이동
 
   const handleCloseModal = () => {
     setRegisterModal(false);
