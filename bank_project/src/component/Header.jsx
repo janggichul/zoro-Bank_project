@@ -11,6 +11,8 @@ const HeaderBlock = styled.div`
   border-bottom: 1px #dedede solid;
 `;
 
+// Hader 타이틀
+
 const Header = ({ title }) => {
   return (
     <HeaderBlock>
