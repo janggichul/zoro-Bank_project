@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRecoilState } from 'recoil';
 import Inputter from '../BalanceCheck/Inputter';
-import {TrasferState } from '../AtomState';
+import {TrasferState } from '../LoginState';
 import TransferInputter from './TransferInputter';
 
 export default function TransferPassword() {

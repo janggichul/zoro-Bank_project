@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRecoilState } from 'recoil';
-import { balanceCheckState } from '../AtomState';
+import { balanceCheckState } from '../LoginState';
 import Inputter from './Inputter';
 
 export default function Password() {

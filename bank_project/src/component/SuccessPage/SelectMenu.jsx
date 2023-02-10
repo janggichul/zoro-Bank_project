@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useRecoilState } from 'recoil';
-import { balanceCheckState, ShowState, TrasferState } from '../AtomState';
+import { balanceCheckState, ShowState, TrasferState } from '../LoginState';
 import BalanceCheck from '../BalanceCheck/BalanceCheck';
 import Swal from 'sweetalert2';
 import Password from '../BalanceCheck/Password';

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import Swal from 'sweetalert2';
 import Test from '../../page/LoginSuccessPage';
-import { balanceCheckState } from '../AtomState';
+import { balanceCheckState } from '../LoginState';
 import BalanceCheck from './BalanceCheck';
 
 const PASSWORD_MAX_LENGTH = 6;

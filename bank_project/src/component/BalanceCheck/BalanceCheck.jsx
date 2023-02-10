@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useRecoilState } from 'recoil';
 import dummy from '../../data/dummy.json';
-import { LoginState } from '../AtomState';
 import Pagination from 'react-js-pagination';
 import { useEffect } from 'react';
 import ActivePage from './ActivePage';

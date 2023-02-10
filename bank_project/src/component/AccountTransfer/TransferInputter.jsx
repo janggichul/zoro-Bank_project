@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import Swal from 'sweetalert2';
-import {TrasferState } from '../AtomState';
+import {TrasferState } from '../LoginState';
 import Transfer from './Transfer';
 
 const PASSWORD_MAX_LENGTH = 6;

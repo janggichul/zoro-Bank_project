@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { Auth } from "../App";
 import ChartPage from "../component/chart/ChartPage";
-import { LoginState } from "../component/AtomState";
+import { LoginState } from "../component/LoginState";
 import AccountLink from "../component/SuccessPage/AccountLink";
 import QuickMenu from "../component/SuccessPage/QuickMenu";
 import SelectMenu from "../component/SuccessPage/SelectMenu";
