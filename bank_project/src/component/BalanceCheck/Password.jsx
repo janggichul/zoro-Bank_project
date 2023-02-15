@@ -5,8 +5,10 @@ import Inputter from './Inputter';
 
 
  // 잔액조회 2차 비밀번호 header
-export default function Password() {
+export default function Password(props) {
    
+  const {onClickButton } = props 
+
   const [cancel, setCancel] = useRecoilState(balanceCheckState);
 
 
@@ -26,7 +28,7 @@ export default function Password() {
       </button>
         <h1 class="text-black text-center mt-10 text-2xl font-bold" >2차 비밀번호</h1>
         <p class="text-red-500 text-center text-xl font-bold" >(123456)</p>
-        <Inputter />
+        <Inputter onClickButton={onClickButton}/>
         </div>
         </div>
     </>

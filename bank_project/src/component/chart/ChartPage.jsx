@@ -1,41 +1,43 @@
-import React from 'react'
+// import "./styles.css";
+import React, { useCallback, useState } from 'react';
+import dummy from '../../data/dummy.json';
+
+import MonthView from './MonthView';
+import AllInquiryView from './AllInquiryView';
+import FilterButton from './FilterButton';
+import { ShowState } from '../LoginState';
+import { useRecoilState } from 'recoil';
+
+const data = dummy.inquiry;
+
+// console.log('data', data);
 
 export default function ChartPage() {
+  const [button, setButton] = useState(false);
+  const [show, setShow] = useRecoilState(ShowState);
+
+ if(show === false) {
   return (
-    <section class="p-5">
-    <div class="mb-5 flex items-center justify-between">
-      <h4 class="font-medium text-slate-500">차트를 확인하시려면 클릭해주세요.</h4>
+    <div class="space-x-4 rounded-xl bg-white p-4 shadow-sm w-80 ml-16 items-center mb-60">
+        <h4 class="text-center font-semibold text-gray-600">계좌연동을 먼저 해주세요.</h4>
     </div>
-    <div class="">
-      <div class="flex space-x-4 rounded-xl bg-white p-3 shadow-sm items-center mb-4">
-      <img
-                class="aspect-square w-16 rounded-lg bg-center object-cover"
-                src="https://iconscout.com/iconscout_logo-1024x1024.png"
-                alt=""
-              />
-        <div>
-          <h4 class="font-semibold text-gray-600">Test</h4>
-          <p class="text-sm text-slate-400">
-            {/* {`${user.user.displayName}님의 잔액을 조회합니다.`} */}
-          </p>
-        </div>
-        <div>
-        </div>
-      </div>
-      <div class="flex space-x-4 rounded-xl bg-white p-3 shadow-sm items-center mb-2">
-        <img
-          class="aspect-square w-16 rounded-lg bg-center object-cover"
-          src="https://iconscout.com/iconscout_logo-1024x1024.png"
-          alt=""
-        />
-        <div>
-          <h4 class="font-semibold text-gray-600">test</h4>
-          <p class="text-sm text-slate-400">
-            test
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
   )
+ }
+
+
+  return (
+    <div class="mx-auto w-min">
+      <div class="flex justify-between">
+        <h1 class="mb-4 w-16 text-center bg-indigo-500 h-max rounded-lg text-white font-bold">
+          이용현황
+        </h1>
+        <div class="flex">
+          <FilterButton button={setButton}/>
+        </div>
+      </div>
+          {button !== true && <AllInquiryView data={data} button={button}/>}
+          {button === true && <MonthView data={data} />}
+    </div>
+  );
 }
+

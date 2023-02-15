@@ -115,7 +115,7 @@ export default function TransferInputter() {
           확인
         </button>
       </div>
-        {state && <Transfer />}
+        {/* {state && <Transfer />} */}
     </>
   );
 }

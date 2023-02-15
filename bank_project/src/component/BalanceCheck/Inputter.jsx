@@ -3,7 +3,6 @@ import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import Swal from 'sweetalert2';
-import Test from '../../page/LoginSuccessPage';
 import { balanceCheckState } from '../LoginState';
 import BalanceCheck from './BalanceCheck';
 
@@ -11,7 +10,11 @@ const PASSWORD_MAX_LENGTH = 6;
 
   // 잔액조회 2차 비밀번호 입력기
 
-export default function Inputter() {
+export default function Inputter(props) {
+
+  const {onClickButton} = props
+
+  console.log("테스트", onClickButton)
   let nums_init = Array.from({ length: 10 }, (v, k) => k);
 
   const [nums, setNums] = useState(nums_init);
@@ -53,6 +56,7 @@ export default function Inputter() {
   );
 
   const onClickSubmitButton = (e) => {
+    onClickButton()
     if (password !== '123456') {
       Swal.fire({
         text: '2차 비밀번호를 확인해주세요.',
@@ -116,7 +120,7 @@ export default function Inputter() {
           확인
         </button>
       </div>
-        {state && <BalanceCheck />}
+        {/* {state && <BalanceCheck />} */}
     </>
   );
 }

@@ -3,7 +3,6 @@ import dummy from '../../data/dummy.json';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
-import TransferLoading from '../Loading/TransferLoading';
 
 
   // 계좌이체 페이지
@@ -145,8 +144,6 @@ export default function Transfer() {
                   name="account"
                   class="text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-16 text-sm border-gray-300 rounded border"
                   placeholder="XXX - XXXX - XXXXX"
-                  // required
-
                   {...register('account', {
                     required: '계좌번호를 입력해주세요',
                     pattern: {
@@ -231,11 +228,6 @@ export default function Transfer() {
           </div>
         </div>
       </div>
-      {/* <div class="w-full flex justify-center py-12" id="button">
-        <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 mx-auto transition duration-150 ease-in-out hover:bg-indigo-600 bg-indigo-700 rounded text-white px-4 sm:px-8 py-2 text-xs sm:text-sm">
-          Open Modal
-        </button>
-      </div> */}
     </section>
   );
 }

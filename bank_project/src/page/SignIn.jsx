@@ -83,7 +83,15 @@ export default function SignIn() {
           padding: 10,
           confirmButtonText: '확인',
         });
-      } else {
+      } else if("" === email) {
+        Swal.fire({
+          text: '이메일을 입력해주세요.',
+          width: 350,
+          padding: 10,
+          confirmButtonText: '확인',
+        });
+      } 
+      else {
         Swal.fire({
           text: '사용 가능한 이메일입니다.',
           width: 350,

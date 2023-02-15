@@ -15,7 +15,7 @@ export default function QuickMenu({button}) {
   }
   return (
     <div class="sticky bottom-0 w-full rounded-t-xl bg-white px-5 py-2 shadow-sm shadow-gray-300">
-    <nav class="flex justify-around text-gray-900">
+    <nav class="flex justify-around text-gray-900 py-3">
       <button className={`${!state ? "rounded-full bg-slate-100 p-0 text-indigo-600" : ''}`} onClick={handleHomeButton}>
         <svg
           class="h-7 w-7"
@@ -48,7 +48,7 @@ export default function QuickMenu({button}) {
           ></path>
         </svg>
       </button>
-      <a href="" class="py-3">
+      {/* <a href="" class="py-3">
         <svg
           class="h-7 w-7"
           fill="none"
@@ -69,7 +69,7 @@ export default function QuickMenu({button}) {
             d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
           ></path>
         </svg>
-      </a>
+      </a> */}
     </nav>
   </div>  )
 }

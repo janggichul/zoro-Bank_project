@@ -36,6 +36,10 @@ export default function SelectMenu(props) {
   }
   // 잔액조회 / 계좌이체 클릭시 2차 비밀번호 입력기 전시
   
+
+  const handleOnClickButton = () => {
+    
+  }
   return (
     <section class="p-5">
       <div class="mb-5 flex items-center justify-between">
@@ -58,7 +62,7 @@ export default function SelectMenu(props) {
             </div>
           </div>
         </button>
-        {balanceCheck && <Password />}
+        {balanceCheck && <Password onClickButton={handleOnClickButton}/>}
         <div></div>
         <button class="w-full text-left" onClick={handleAcountTransferButton}>
           <div class="flex space-x-4 rounded-xl bg-white p-3 shadow-sm items-center mb-2">
@@ -70,7 +74,7 @@ export default function SelectMenu(props) {
               <h4 class="font-semibold text-gray-600">계좌이체</h4>
               <p class="text-sm text-slate-400">계좌이체를 진행합니다.</p>
             </div>
-          </div>
+          </div>  
         </button>
         {accountTransfer && <TransferPassword />}
       </div>

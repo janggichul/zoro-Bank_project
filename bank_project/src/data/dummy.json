@@ -2,116 +2,309 @@
      "inquiry" : [
       {
         "num": 1,
-        "day": "1월 1일" ,
+        "month" : "1월",
+        "day": "1월 1일",
         "dti": "GS강남",
-        "amt" :"-33000",
-        "curamt" :"100000000"
+        "amt" :"-30000",
+        "withdraw" : "30",
+        "deposit" : "0",
+        "curamt" :"1000000"
+
       },
     
       {
         "num": 2,
+        "month" : "1월",
         "day": "1월 1일" ,
         "dti": "00반점",
         "amt" :"-100000",
-        "curamt" :"99900000"
+        "curamt" :"990000",
+        "withdraw" :"10",
+        "deposit" : "0"
       },
     
       {
         "num": 3,
-        "day": "1월 2일" ,
+        "month" : "1월",
+        "day": "1월 2일",
         "dti": "CU강남",
         "amt" :"-10000",
-        "curamt" :"99990000"
+        "curamt" :"989000",
+        "withdraw" :"1",
+        "deposit" : "0"
+
       },
     
       {
         "num": 4,
+        "month" : "1월",
         "day": "1월 2일" ,
         "dti": "롯데백화점",
-        "amt" :"-13000000",
-        "curamt" :"86900000"
+        "amt" :"-130000",
+        "withdraw" :"13",
+        "deposit" : "0",
+        "curamt" :"869000"
       },
     
       {
         "num": 5,
+        "month" : "1월",
         "day": "1월 6일" ,
         "dti": "식대",
-        "amt" :"1000000",
-        "curamt" :"87900000"
+        "amt" :"100000",
+        "curamt" :"879000",
+        "withdraw" :"0",
+        "deposit" : "10"
       },
-    
       {
         "num": 6,
+        "month" : "1월",
         "day": "1월 6일" ,
         "dti": "관악백반",
         "amt" :"-60000",
-        "curamt" :"87840000"
+        "withdraw" :"6",
+        "deposit" :"0",
+        "curamt" :"819000"
       },
       {
         "num": 7,
+        "month" : "2월",
         "day": "2월 1일" ,
         "dti": "관악별빛",
-        "amt" :"-9500000",
-        "curamt" :"86890000"
+        "amt" :"-90000",
+        "withdraw" :"9",
+        "deposit" : "0",
+        "curamt" :"729000"
       },
       {
         "num": 8,
+        "month" : "2월",
         "day": "2월 6일" ,
         "dti": "식대",
-        "amt" :"1000000",
-        "curamt" :"87890000"
+        "amt" :"100000",
+        "withdraw" :"0",
+        "deposit" :"10",
+        "curamt" :"729000"
       },
       {
         "num": 9,
+        "month" : "2월",
         "day": "2월 12일" ,
         "dti": "롯데백화점",
-        "amt" :"-33000000",
-        "curamt" :"54890000"
+        "amt" :"-330000",
+        "withdraw" :"33",
+        "deposit" : "0",
+        "curamt" :"399000"
       },
       {
         "num": 10,
+        "month" : "2월",
         "day": "2월 27일" ,
         "dti": "제로은행",
-        "amt" :"5000000",
-        "curamt" :"59890000"
+        "amt" :"500000",
+        "withdraw" :"50",
+        "deposit" :"0",
+        "curamt" :"899000"
       },
       {
         "num": 11,
+        "month" : "3월",
         "day": "3월 1일" ,
         "dti": "독립기념관",
-        "amt" :"-9000000",
-        "curamt" :"50890000"
+        "amt" :"-90000",
+        "withdraw" :"9",
+        "deposit" : "0",
+        "curamt" :"809000"
       },
       {
         "num": 12,
+        "month" : "3월",
         "day": "3월 6일" ,
         "dti": "식대",
-        "amt" :"-10000000",
-        "curamt" :"51890000"
+        "amt" :"100000",
+        "withdraw" :"0",
+        "deposit" :"10",
+        "curamt" :"909000"
       },
       {
         "num": 13,
+        "month" : "3월",
         "day": "3월 7일" ,
         "dti": "제로은행",
-        "amt" :"100000000",
-        "curamt" :"151890000"
+        "amt" :"150000",        
+        "withdraw" :"0",
+        "deposit" :"15",
+        "curamt" :"1059000"
       },
       {
         "num": 14,
+        "month" : "3월",
         "day": "3월 10일" ,
         "dti": "00반점",
         "amt" :"-100000",
-        "curamt" :"151790000"
+        "withdraw" :"10",
+        "deposit" : "0",
+        "curamt" :"959000"
       },
       {
         "num": 15,
+        "month" : "3월",
         "day": "3월 13일" ,
         "dti": "신세계백화점",
-        "amt" :"-15000000",
-        "curamt" :"136790000"
+        "amt" :"-150000",
+        "withdraw" :"15",
+        "deposit" : "0",
+        "curamt" :"809000"
+      },
+      {
+        "num": 16,
+        "month" : "3월",
+        "day": "3월 15일" ,
+        "dti": "신세계백화점",
+        "amt" :"-200000",
+        "withdraw" :"20",
+        "deposit" : "0",
+        "curamt" :"609000"
+      },
+      {
+        "num": 17,
+        "month" : "3월",
+        "day": "3월 19일" ,
+        "dti": "신세계백화점",
+        "amt" :"300000",
+        "withdraw" :"0",
+        "deposit" : "30",
+        "curamt" :"909000"
+      },
+      {
+        "num": 18,
+        "month" : "4월",
+        "day": "4월 15일" ,
+        "dti": "신세계백화점",
+        "amt" :"-200000",
+        "withdraw" :"20",
+        "deposit" : "0",
+        "curamt" :"709000"
+      },
+      {
+        "num": 19,
+        "month" : "4월",
+        "day": "4월 21일" ,
+        "dti": "신세계백화점",
+        "amt" :"200000",
+        "withdraw" :"0",
+        "deposit" : "20",
+        "curamt" :"909000"
+      },
+      {
+        "num": 20,
+        "month" : "5월",
+        "day": "5월 6일" ,
+        "dti": "식대",
+        "amt" :"100000",
+        "curamt" :"1009000",
+        "withdraw" :"0",
+        "deposit" : "10"
+      },
+      {
+        "num": 21,
+        "month" : "5월",
+        "day": "5월 13일" ,
+        "dti": "관악백반",
+        "amt" :"-60000",
+        "withdraw" :"6",
+        "deposit" :"0",
+        "curamt" :"949000"
+      },
+      {
+        "num": 22,
+        "month" : "6월",
+        "day": "6월 1일" ,
+        "dti": "관악별빛",
+        "amt" :"-80000",
+        "withdraw" :"8",
+        "deposit" : "0",
+        "curamt" :"869000"
+      },
+      {
+        "num": 23,
+        "month" : "7월",
+        "day": "7월 6일" ,
+        "dti": "식대",
+        "amt" :"50000",
+        "withdraw" :"0",
+        "deposit" :"5",
+        "curamt" :"919000"
+      },
+      {
+        "num": 24,
+        "month" : "7월",
+        "day": "7월 12일" ,
+        "dti": "정비소",
+        "amt" :"-250000",
+        "withdraw" :"25",
+        "deposit" : "0",
+        "curamt" :"669000"
+      },
+      {
+        "num": 25,
+        "month" : "8월",
+        "day": "8월 2일" ,
+        "dti": "제로은행",
+        "amt" :"150000",
+        "withdraw" :"",
+        "deposit" :"15",
+        "curamt" :"899000"
+      },
+      {
+        "num": 26,
+        "month" : "9월",
+        "day": "9월 2일" ,
+        "dti": "아웃백",
+        "amt" :"-300000",
+        "withdraw" :"30",
+        "deposit" : "0",
+        "curamt" :"519000"
+      },
+      {
+        "num": 27,
+        "month" : "9월",
+        "day": "9월 21일" ,
+        "dti": "영풍문고",
+        "amt" :"100000",
+        "withdraw" :"10",
+        "deposit" : "0",
+        "curamt" :"419000"
+      },
+      {
+        "num": 28,
+        "month" : "10월",
+        "day": "10월 7일" ,
+        "dti": "제로은행",
+        "amt" :"250000",
+        "withdraw" :"0",
+        "deposit" : "25",
+        "curamt" :"669000"
+      },
+      {
+        "num": 19,
+        "month" : "10월",
+        "day": "10월 25일" ,
+        "dti": "식대",
+        "amt" :"100000",
+        "withdraw" :"0",
+        "deposit" : "10",
+        "curamt" :"769000"
+      },
+      {
+        "num": 19,
+        "month" : "11월",
+        "day": "11월 5일" ,
+        "dti": "신세계백화점",
+        "amt" :"-300000",
+        "withdraw" :"30",
+        "deposit" : "",
+        "curamt" :"469000"
       }
-    
-    
-    
     ]
   }
